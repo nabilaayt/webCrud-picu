@@ -57,7 +57,7 @@ export const UploadImage = async (prevState: unknown, formData: FormData) => {
                 image: url,
             },
         });
-    } catch (error) {
+    } catch (_error) {
         return {message: "Failed to create data"};
     }
 
@@ -124,7 +124,7 @@ export const deleteImage = async (id: string) =>{
         await prisma.upload.delete({
             where: {id},
         })
-    } catch (error) {
+    } catch (_error) {
         return {message: "Failed to create data"};
     }
 

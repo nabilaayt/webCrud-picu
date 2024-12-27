@@ -105,7 +105,7 @@ export const updateImage = async (
             },
             where:{id}
         });
-    } catch (error) {
+    } catch (_error) {
         return {message: "Failed to update data"};
     }
 
@@ -125,7 +125,7 @@ export const deleteImage = async (id: string) =>{
             where: {id},
         })
     } catch (error) {
-        return {message: "Failed to delete data"}
+        return {message: "Failed to create data"};
     }
 
     revalidatePath("/");
